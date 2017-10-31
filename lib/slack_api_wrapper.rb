@@ -4,15 +4,23 @@ class SlackApiWrapper
   BASE_URL = "https://slack.com/api/"
   TOKEN = ENV["SLACK_TOKEN"]
 
-  def self.list_channels
-    url = BASE_URL + "channels.list?" + "token=#{TOKEN}" + "&pretty=1&exclude_archived=1"
+  class ApiError < StandardError
+  end
+
+  def self.list_channels(token=TOKEN)
+    url = BASE_URL + "channels.list?" + "token=#{token}" + "&pretty=1&exclude_archived=1"
+
     data = HTTParty.get(url)
+
+    check_status(data)
+
     channel_list = []
     if data["channels"]
       data["channels"].each do |channel_data|
         channel_list << self.create_channel(channel_data)
       end
     end
+
     return channel_list
   end
 
@@ -30,10 +38,19 @@ class SlackApiWrapper
       "as_user" => "false"
     },
     :headers => { 'Content-Type' => 'application/x-www-form-urlencoded' })
-    return response.success?
+
+    check_status(response)
+
+    return true
   end
 
   private
+
+  def self.check_status(response)
+    unless response["ok"]
+      raise ApiError.new("API call to slack failed: #{response["error"]}")
+    end
+  end
 
   def self.create_channel(api_params)
     return Channel.new(

@@ -1628,4 +1628,247 @@ http_interactions:
         }
     http_version: 
   recorded_at: Tue, 31 Oct 2017 17:34:24 GMT
+- request:
+    method: get
+    uri: https://slack.com/api/channels.list?exclude_archived=1&pretty=1&token=bogus_token
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '62'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Date:
+      - Tue, 31 Oct 2017 17:51:49 GMT
+      Referrer-Policy:
+      - no-referrer
+      Server:
+      - Apache
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Slack-Backend:
+      - h
+      X-Slack-Req-Id:
+      - 4386e5bc-5641-4956-9ec3-68a24bca7795
+      X-Xss-Protection:
+      - '0'
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 0a2501ae0ed427359f994eac4603feec.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - 26hJ9eB1nOfzX-ONnvAQulb_q61v6MUr8FvmVWd76vUGFEJZIae9UQ==
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+            "ok": false,
+            "error": "invalid_auth"
+        }
+    http_version: 
+  recorded_at: Tue, 31 Oct 2017 17:51:50 GMT
+- request:
+    method: post
+    uri: https://slack.com/api/chat.postMessage?token=<SLACK_TOKEN>
+    body:
+      encoding: UTF-8
+      string: text=&channel=test-api-channel&username=Roberts-Robit&icon_emoji=%3Arobot_face%3A&as_user=false
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '30'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Date:
+      - Tue, 31 Oct 2017 18:23:37 GMT
+      Expires:
+      - Mon, 26 Jul 1997 05:00:00 GMT
+      Pragma:
+      - no-cache
+      Referrer-Policy:
+      - no-referrer
+      Server:
+      - Apache
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Vary:
+      - Accept-Encoding
+      X-Accepted-Oauth-Scopes:
+      - chat:write:bot,post
+      X-Content-Type-Options:
+      - nosniff
+      X-Oauth-Scopes:
+      - identify,read,post,client,apps,admin
+      X-Slack-Backend:
+      - h
+      X-Slack-Req-Id:
+      - 97676789-e84e-405c-95d5-a045eaff5c13
+      X-Xss-Protection:
+      - '0'
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 521677cb737ea195cb873db955bcc307.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - mz-GfGHsofOMui2TtuSkCQ15k5HVWT8UX3pfGpLUpaz4OcUHSX_yIQ==
+    body:
+      encoding: UTF-8
+      string: '{"ok":false,"error":"no_text"}'
+    http_version: 
+  recorded_at: Tue, 31 Oct 2017 18:23:38 GMT
+- request:
+    method: post
+    uri: https://slack.com/api/chat.postMessage?token=<SLACK_TOKEN>
+    body:
+      encoding: UTF-8
+      string: text=test%20message&channel=test-api-channel&username=Roberts-Robit&icon_emoji=%3Arobot_face%3A&as_user=false
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '327'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Date:
+      - Tue, 31 Oct 2017 18:23:38 GMT
+      Expires:
+      - Mon, 26 Jul 1997 05:00:00 GMT
+      Pragma:
+      - no-cache
+      Referrer-Policy:
+      - no-referrer
+      Server:
+      - Apache
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Vary:
+      - Accept-Encoding
+      X-Accepted-Oauth-Scopes:
+      - chat:write:bot,post
+      X-Content-Type-Options:
+      - nosniff
+      X-Oauth-Scopes:
+      - identify,read,post,client,apps,admin
+      X-Slack-Backend:
+      - h
+      X-Slack-Req-Id:
+      - 1b743d1d-fc80-4428-be9b-c4ff7cf710e3
+      X-Xss-Protection:
+      - '0'
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 8dae7df87719a07f42e1196c2adda1c1.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - upTGlhOoEPsRKCpNY5sDswyb43WXlW-F77DwXdsMgazfRICfXZfIjw==
+    body:
+      encoding: UTF-8
+      string: '{"ok":true,"channel":"C7PQB5HGB","ts":"1509474218.000283","message":{"text":"test
+        message","username":"Roberts-Robit","icons":{"emoji":":robot_face:","image_64":"https:\/\/a.slack-edge.com\/f5d6f\/img\/emoji_2016_06_08\/apple\/1f916.png"},"bot_id":"B7TJEUT70","type":"message","subtype":"bot_message","ts":"1509474218.000283"}}'
+    http_version: 
+  recorded_at: Tue, 31 Oct 2017 18:23:39 GMT
+- request:
+    method: post
+    uri: https://slack.com/api/chat.postMessage?token=<SLACK_TOKEN>
+    body:
+      encoding: UTF-8
+      string: text=test%20message&channel=channel-that-doesnt-exist&username=Roberts-Robit&icon_emoji=%3Arobot_face%3A&as_user=false
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '40'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Date:
+      - Tue, 31 Oct 2017 18:23:40 GMT
+      Expires:
+      - Mon, 26 Jul 1997 05:00:00 GMT
+      Pragma:
+      - no-cache
+      Referrer-Policy:
+      - no-referrer
+      Server:
+      - Apache
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Vary:
+      - Accept-Encoding
+      X-Accepted-Oauth-Scopes:
+      - chat:write:bot,post
+      X-Content-Type-Options:
+      - nosniff
+      X-Oauth-Scopes:
+      - identify,read,post,client,apps,admin
+      X-Slack-Backend:
+      - h
+      X-Slack-Req-Id:
+      - 8ef7cf5a-a410-42d6-afdb-eb73bfaa50cf
+      X-Xss-Protection:
+      - '0'
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 d9adada028fe3a04aed64f9ed9d80dd2.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - 7ZotR-O7-vXgrhBdYf7X4BjFK927F5SQbzaF_ucVN1JckYxEGpMrEA==
+    body:
+      encoding: UTF-8
+      string: '{"ok":false,"error":"channel_not_found"}'
+    http_version: 
+  recorded_at: Tue, 31 Oct 2017 18:23:40 GMT
 recorded_with: VCR 3.0.3
