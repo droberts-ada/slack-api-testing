@@ -1,0 +1,10 @@
+<section class="channels-list">
+  <h1>Ada Channels</h1>
+  <ul>
+    <% @channels.each do |channel| %>
+      <li>
+        <%= channel.name %>
+      </li>
+    <% end %>
+  </ul>
+</section>
